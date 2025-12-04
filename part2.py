@@ -488,6 +488,14 @@ Each should return a dataframe.
 The input CSV file will have 600 rows, but the DataFrame (after your cleaning) may have less than that.
 """
 
+# Load full dataset
+df = pd.read_csv("data/population.csv")
+
+# Make sure the files exist and include headers
+df.head(600).to_csv("data/population-small.csv", index=False)
+df.head(6000).to_csv("data/population-medium.csv", index=False)
+df.head(1).to_csv("data/population-single-row.csv", index=False)
+
 def load_input_small():
     # Return a cleaned dataframe for the small dataset (600 rows)
     df = load_input("data/population-small.csv")
