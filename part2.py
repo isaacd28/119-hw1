@@ -786,9 +786,11 @@ def for_loop_large():
 
 def for_loop_latency():
     df = load_input_single_row()
-    # For latency, duplicate one row so it's not empty
+    # Duplicate the row if only one row exists
     if len(df) == 1:
         df = pd.concat([df, df], ignore_index=True)
+        # Make the second row have a different year to avoid empty growth_rates
+        df.loc[1, "Year"] += 1
     return for_loop_pipeline(df)
 
 def q12():
