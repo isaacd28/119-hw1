@@ -946,42 +946,16 @@ Return the top 10 university names as a list from the falsified data.
 """
 
 def q21():
-  # Load the falsified CSV
-    try:
-        df = pd.read_csv("data/2021_falsified.csv", encoding='latin1')
-    except FileNotFoundError:
-        print("Error: '2021_falsified.csv' file not found in 'data/' folder.")
-        return None
-    except Exception as e:
-        print("Error reading CSV:", e)
-        return None
-
-    # Normalize column names (strip spaces and lowercase)
-    df.columns = df.columns.str.strip().str.lower()
-
-    # Remove rows with missing university names
-    if 'university' not in df.columns:
-        print("Error: 'university' column not found in CSV.")
-        return None
-    df = df[df['university'].notna()]
-
-    # Compute a cheat score
-    if all(col in df.columns for col in ['overall score', 'academic reputation', 'employer reputation']):
-        df['cheat_score'] = (
-            df['overall score'] * 0.5 +
-            df['academic reputation'] * 0.3 +
-            df['employer reputation'] * 0.2
-        )
-    else:
-        df['cheat_score'] = float('nan')
-
-    # Boost UC Berkeley to the top
-    mask = df['university'].str.strip().str.lower() == 'uc berkeley'
-    df.loc[mask, 'cheat_score'] += 50
-
-    # Return top 10 universities by cheat_score
-    top10 = df.sort_values('cheat_score', ascending=False).head(10)
-    return top10['university'].tolist()
+    # Load the falsified CSV
+    df = pd.read_csv("data/2021_falsified.csv")
+    
+    # Sort by Rank (ensure numeric sort just in case)
+    df_sorted = df.sort_values("Rank")
+    
+    # Get the top 10 universities
+    top_10 = df_sorted["University"].head(10).tolist()
+    
+    return top_10
   
 """
 22. Exploring data manipulation and falsification, continued
