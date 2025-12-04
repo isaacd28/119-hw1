@@ -641,6 +641,7 @@ def q9a():
 
     return throughputs
 
+
 def q9b():
     # Add 2 pipelines for a latency comparison
     # Generate plot in ouptut/q9b.png
@@ -657,6 +658,7 @@ def q9b():
     h.generate_plot("output/part2-q9b.png")
 
     return latencies
+
 
 
  
