@@ -26,5 +26,5 @@ q17,output/part1-17a.png
 q18,output/part1-18.png
 q20a,0
 q20b,['Massachusetts Institute of Technology (MIT)', 'ETH Zurich - Swiss Federal Institute of Technology', 'California Institute of Technology (Caltech)', 'University of Oxford', 'EPFL', 'Stanford University', 'Harvard University', 'UCL', 'University of Cambridge', 'Princeton University']
-q21,['Massachusetts Institute of Technology (MIT)', 'ETH Zurich - Swiss Federal Institute of Technology', 'California Institute of Technology (Caltech)', 'University of Oxford', 'EPFL', 'Stanford University', 'Harvard University', 'UCL', 'University of Cambridge', 'Princeton University']
+q21,['University of California, Berkeley (UCB)', 'Massachusetts Institute of Technology (MIT)', 'Stanford University', 'Harvard University', 'University of Oxford', 'California Institute of Technology (Caltech)', 'ETH Zurich - Swiss Federal Institute of Technology', 'University of Cambridge', 'UCL', 'Imperial College London']
 PART 1,0
